@@ -14,14 +14,12 @@
          </div>
     </div>
 </template>
-
 <script>
 
 export default {
   name: 'HomeHeader'
 }
 </script>
- 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   .header
@@ -54,5 +52,4 @@ export default {
       text-align: center
       .arrow-icon
         font-size: .24rem
-      
 </style>
