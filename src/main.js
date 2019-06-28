@@ -6,9 +6,9 @@ import router from './router'
 /* 解决移动端300ms延迟问题 */
 import fastclick from 'fastclick'
 
-import './assets/styles/reset.css'
-import './assets/styles/border.css'
-
+import 'styles/reset.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
 Vue.config.productionTip = false
 fastclick.attach(document.body)
 
