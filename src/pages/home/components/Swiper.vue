@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       swiperOption: {
-        paginationType: "bullets",
+        paginationType: 'bullets',
         pagination: '.banner-swiper',
         loop: true,
         autoplay: 5000

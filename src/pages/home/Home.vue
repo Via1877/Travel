@@ -43,8 +43,8 @@ export default {
       if (res.ret && res.data) {
         this.city = res.data.city
         this.swiperList = res.data.swiperList
-        this.iconList =res.data.iconList
-        this.recommendList =res.data.recommendList
+        this.iconList = res.data.iconList
+        this.recommendList = res.data.recommendList
         this.weekendList = res.data.weekendList
       }
     }
