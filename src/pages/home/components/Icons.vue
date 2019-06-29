@@ -1,12 +1,12 @@
 <template>
   <div class="icons">
-    <swiper :options="swiperOption">
+    <swiper v-if="showIcons">
       <swiper-slide v-for="page of pages" :key='page.index'>
         <div class="icon"  v-for="item in page" :key="item.id" >
           <div class="icon-img">
-            <img class="icon-img-content" :src="item.src">
+            <img class="icon-img-content" :src="item.imgUrl">
           </div>
-          <p class="icon-img-desc">攻略</p>
+          <p class="icon-img-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -16,67 +16,23 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data () {
-    return {
-      swiperOption: {
-        pagination: '.swiper-pagination'
-      },
-      iconList: [
-        {
-          id: '001',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png',
-          desc: '攻略'
-        }, {
-          id: '002',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/39401/17/2391/5859/5cc06fcfE2ad40668/28cda0a571b4a576.png.webp',
-          desc: '攻略'
-        }, {
-          id: '003',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t22228/270/207441984/11564/88140ab7/5b03fae3N67f78fe3.png.webp',
-          desc: '攻略'
-        }, {
-          id: '004',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/7068/29/8987/5605/5c120da2Ecae1cc3a/016033c7ef3e0c6c.png.webp',
-          desc: '攻略'
-        }, {
-          id: '005',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t16828/63/2653634926/5662/d18f6fa1/5b03b779N5c0b196f.png.webp',
-          desc: '攻略'
-        }, {
-          id: '006',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png',
-          desc: '攻略'
-        }, {
-          id: '007',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/39401/17/2391/5859/5cc06fcfE2ad40668/28cda0a571b4a576.png.webp',
-          desc: '攻略'
-        }, {
-          id: '008',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t22228/270/207441984/11564/88140ab7/5b03fae3N67f78fe3.png.webp',
-          desc: '攻略'
-        }, {
-          id: '009',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t1/7068/29/8987/5605/5c120da2Ecae1cc3a/016033c7ef3e0c6c.png.webp',
-          desc: '攻略'
-        }, {
-          id: '010',
-          src: '//m.360buyimg.com/mobilecms/s120x120_jfs/t16828/63/2653634926/5662/d18f6fa1/5b03b779N5c0b196f.png.webp',
-          desc: '攻略'
-        }
-      ]
-    }
+  props: {
+    list: Array
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item,index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
-        if(!pages[page]){
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)
       })
       return pages
+    },
+    showIcons () {
+      return this.list.length
     }
   }
 }
