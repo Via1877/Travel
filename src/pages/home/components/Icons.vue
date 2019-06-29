@@ -97,7 +97,7 @@ export default {
       position: relative
       float: left
       .icon-img
-        padding: .1rem
+        padding: .3rem .3rem .1rem
         position: absolute
         top: 0
         left: 0
@@ -116,4 +116,5 @@ export default {
           width: 100%
           height: .64rem
           line-height: .64rem
+          ellipsis ()
 </style>
