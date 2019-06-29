@@ -17,10 +17,10 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div class="area" v-for="(item, key) of cities" :key="item.id">
         <div class="title border-topbottom">{{key}}</div>
         <ul class="item-list">
-          <li class="item border-bottom" v-for="city of item" :key="city.id">{{city.name}}</li>
+          <li class="item border-bottom" v-for="city of item" :key="city.id">{{city.name}} </li>
         </ul>
       </div>
     </div>
@@ -35,7 +35,7 @@ export default {
     cities: Object,
     hot: Array
   },
-  updated () {
+  mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
@@ -49,7 +49,6 @@ export default {
     &:after
       border-color: #ccc
   .list
-    touch-action: none
     position: absolute
     top: 1.58rem
     left: 0
