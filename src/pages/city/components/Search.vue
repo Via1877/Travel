@@ -12,16 +12,19 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  .search >>> input::-webkit-input-placeholder
+    color: #43bfcd
   .search
     height: .72rem
     background: $bgColor
     padding: 0 .1rem
   .search-input
     width: 100%
-    border-radius: .06rem
-    height: .62rem
-    line-height: .62rem
-    color: #666
+    border-radius: .31rem
+    height: .52rem
+    line-height: .52rem
+    color: #43bfcd
+    background: #28a1b0
     box-sizing: border-box
     text-align: center
     padding: 0 .2rem
