@@ -15,7 +15,7 @@
     </div>
     <fade-animation>
       <common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleCloseGallary"></common-gallary>
-    </fade-animation>  
+    </fade-animation>
   </div>
 </template>
 

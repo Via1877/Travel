@@ -1,8 +1,8 @@
 <template>
     <div  class="header">
-         <div class="header-left">
+         <router-link tag="div" to='/login' class="header-left">
            <span class="iconfont back-icon">&#xe624;</span>
-          </div>
+         </router-link>
          <div class="header-input">
            <span class="iconfont">&#xe632;</span>
            输入城市/景点/游玩主题
