@@ -1,16 +1,22 @@
 <template>
   <div class="index-recommend">
     <div class="recommend-title">热销推荐</div>
-    <div class="recommend border-bottom" v-if="showRecommend" v-for="item in list" :key="item.id" >
-      <div class="recommend-img" >
-        <img class="recommend-img-content"  :src="item.imgUrl">
-      </div>
-      <div class="recommend-img-info">
-        <p class="recommend-img-title">{{item.title}}</p>
-        <p class="recommend-img-desc">{{item.desc}}</p>
-        <button class="read-more">查看详情</button>
-      </div>
-    </div>
+      <router-link tag="div"
+                   :to="'./detail/' + item.id"
+                   class="recommend border-bottom"
+                   v-if="showRecommend"
+                   v-for="item in list"
+                   :key="item.id"
+      >
+        <div class="recommend-img" >
+          <img class="recommend-img-content"  :src="item.imgUrl">
+        </div>
+        <div class="recommend-img-info">
+          <p class="recommend-img-title">{{item.title}}</p>
+          <p class="recommend-img-desc">{{item.desc}}</p>
+          <button class="read-more">查看详情</button>
+        </div>
+      </router-link >
   </div>
 </template>
 
@@ -64,6 +70,7 @@ export default {
           font-size: .32rem
           font-weight: blod
           ellipsis ()
+          color: #333
         .recommend-img-desc
           color: $darkTextColor
           height: .4rem
