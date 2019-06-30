@@ -8,7 +8,8 @@
            输入城市/景点/游玩主题
          </div>
          <router-link to="/city">
-          <div class="header-right">{{this.city}}
+          <div class="header-right">
+              <span class="city-now">{{this.$store.state.city}}</span>
               <span class="iconfont arrow-icon">
               &#xe62d;
               </span>
@@ -19,14 +20,12 @@
 <script>
 
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  @import '~styles/minins.styl'
   .header
     display: flex
     height: .86rem
@@ -52,10 +51,12 @@ export default {
       padding-left: .2rem
       border-radius: .1rem
     .header-right
-      width: 1.24rem
+      min-width: 1.04rem
+      padding: 0 .1rem
       float: right
       text-align: center
       color: #fff
+      box-sizing: border-box
       .arrow-icon
         font-size: .24rem
 </style>

@@ -9,7 +9,11 @@
   </div>
   <div class="search-content" ref="search" v-show="keyword">
     <ul>
-      <li class="search-item border-bottom" v-for="city of list" :key="city.id">
+      <li class="search-item border-bottom"
+          v-for="city of list"
+          :key="city.id"
+          @click="handleCityClick(city.name)"
+      >
         {{city.name}}
       </li>
       <li class="search-item border-bottom" v-show="hasNoData">
@@ -34,8 +38,14 @@ export default {
       timer: null
     }
   },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('./')
+    }
+  },
   updated () {
-    this.scroll = new Bscroll(this.$refs.search)
+    this.scroll = new Bscroll(this.$refs.search, {click: true})
   },
   computed: {
     hasNoData () {
