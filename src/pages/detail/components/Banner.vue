@@ -1,11 +1,11 @@
 <template>
   <div>
       <div class="banner">
-      <img class="banner-img" 
-           src="https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg" 
+      <img class="banner-img"
+           src="https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg"
            @click="handleBannerClick"
-           alt="" 
-           srcset="">
+           alt=""
+      >
       <div class="banner-info">
         <div class="banner-title">大连圣亚海洋馆</div>
         <div class="banner-number">
@@ -28,8 +28,8 @@ export default {
     return {
       showGallary: false,
       imgs: [
-          'https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg',
-          'https://imgs.qunarzz.com/p/p49/1805/90/0c724f6a337f8202.jpg_480x320_0247de13.jpg'
+        'https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg',
+        'https://imgs.qunarzz.com/p/p49/1805/90/0c724f6a337f8202.jpg_480x320_0247de13.jpg'
       ]
     }
   },
