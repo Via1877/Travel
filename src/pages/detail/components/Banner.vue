@@ -1,18 +1,46 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg" alt="" srcset="">
-    <div class="banner-info">
-      <div class="banner-title">大连圣亚海洋馆</div>
-      <div class="banner-number">
-        <span class="iconfont banner-iconfont">&#xe691;</span>39
+  <div>
+      <div class="banner">
+      <img class="banner-img" 
+           src="https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg" 
+           @click="handleBannerClick"
+           alt="" 
+           srcset="">
+      <div class="banner-info">
+        <div class="banner-title">大连圣亚海洋馆</div>
+        <div class="banner-number">
+          <span class="iconfont banner-iconfont">&#xe691;</span>39
+        </div>
       </div>
     </div>
+    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleCloseGallary"></common-gallary>
   </div>
 </template>
 
 <script>
+import CommonGallary from 'common/gallary/Gallary'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  components: {
+    CommonGallary
+  },
+  data () {
+    return {
+      showGallary: false,
+      imgs: [
+          'https://img1.qunarzz.com/vs_ceph_vs_tts/ad1f3289-8a8e-4571-ba15-4a84aeec6a81.jpg_r_640x420x90_e0adc0f6.jpg',
+          'https://imgs.qunarzz.com/p/p49/1805/90/0c724f6a337f8202.jpg_480x320_0247de13.jpg'
+      ]
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
+    },
+    handleCloseGallary () {
+      this.showGallary = false
+    }
+  }
 }
 </script>
 
