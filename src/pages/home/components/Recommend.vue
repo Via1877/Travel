@@ -4,7 +4,7 @@
       <router-link tag="div"
                    :to="'./detail/' + item.id"
                    class="recommend border-bottom"
-                   v-if="showRecommend"
+                   v-show="showRecommend"
                    v-for="item in list"
                    :key="item.id"
       >
